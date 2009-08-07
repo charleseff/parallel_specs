@@ -56,8 +56,8 @@ namespace :parallel do
       puts ""
       puts "Took #{Time.now - start} seconds"
 
-      #exit with correct status code
-      exit klass.failed?(results) ? 1 : 0
+      #exit if there were errors
+      abort "#{type.capitalize}s Failed" if klass.failed?(results)
     end
   end
 end
