@@ -88,6 +88,7 @@ class ParallelTests
   end
 
   def self.find_tests(root)
-    Dir["#{root}**/**/*_test.rb"]
+    Dir["#{root}/unit/**/*_test.rb"] + Dir["#{root}/functional/**/*_test.rb"] + Dir["#{root}/integration/**/*_test.rb"]
   end
+
 end
